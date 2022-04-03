@@ -19,7 +19,7 @@ const TweetsList = () => {
             }
         });
         if(node) observer.current.observe(node);
-    },[tweets, getNextPage, loading, hasMorePages, isSearching]);
+    },[getNextPage, loading, hasMorePages, isSearching]);
 
     const handleTweetsMode = () =>{
         setMyTweetsMode(!myTweetsMode);

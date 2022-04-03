@@ -9,8 +9,8 @@ export const useTweets = () => {
     const failureMessage = useRef("");
 
     useEffect(() => { 
-      hookReload();
-    }, [hookReload]);
+      getNextPage(true);
+    }, []);
 
     useEffect(() => {
       //listen for live updates if: 1.not searching 2.tweet is not displayed already
