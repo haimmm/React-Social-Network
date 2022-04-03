@@ -10,7 +10,7 @@ export const useTweets = () => {
 
     useEffect(() => { 
       getNextPage(true);
-    }, []);
+    }, [getNextPage]);
 
     useEffect(() => {
       //listen for live updates if: 1.not searching 2.tweet is not displayed already
