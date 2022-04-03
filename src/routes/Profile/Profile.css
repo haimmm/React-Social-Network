@@ -1,0 +1,27 @@
+.profile{
+    width: 600px;
+}
+
+.profile h1{
+    font-size: 2.25rem;
+    font-weight: 400;
+}
+
+.profile h3{
+    font-size: 1.125rem;
+    opacity: 80%;
+    font-weight: 400;
+}
+
+.profile input[type="text"]{
+    border: 2px solid #CCCCCC;
+    border-radius: 6px;
+    width: 100%;
+    height: 57px;
+    background-color: transparent;
+    color: inherit;
+    font-size: 1rem;
+    padding-left: 16px;
+    box-sizing: border-box;
+    margin-bottom: 18px;
+}

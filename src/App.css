@@ -1,0 +1,11 @@
+.App {
+  box-sizing: border-box;
+  background: #15202b;
+  width: 100%;
+  min-height:100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  border: 1px solid red;
+}

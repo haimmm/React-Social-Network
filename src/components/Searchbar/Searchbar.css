@@ -1,0 +1,22 @@
+.search input{
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.search select{
+    margin: 0 5px;
+}
+
+.search button{
+    background-color: inherit;
+    border:none;
+    color: white;
+}
+
+.search button:hover{
+    cursor:pointer;
+}
+

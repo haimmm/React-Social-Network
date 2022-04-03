@@ -1,0 +1,12 @@
+.btn{
+    Height: 34px;
+    font-size: 1rem;
+    background: #007BFF;
+    color: white;
+    border-radius: 4px;
+    border:none;
+}
+
+.btn:active, .btn:disabled{
+    opacity: 0.5;
+}
