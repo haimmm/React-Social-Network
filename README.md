@@ -10,6 +10,7 @@ First of all I didn't know how to use firebase and surfing through big api and f
 Worst feeling was when I search for something, just to find out it costs money or just not possible.\
 In the other hand google saves you a lot of time and gives you running server with authtentication and db ready to use.\
 
+
 I also learned more common react tools such as context API so I can easily access the autentication system from all components, \
 and also react router which gives multi page effet.
 
