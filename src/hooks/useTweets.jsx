@@ -1,5 +1,5 @@
 import fb from "firebase-config";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const useTweets = () => {
     const [tweets, setTweets] = useState([]);
@@ -8,9 +8,15 @@ export const useTweets = () => {
     const [isSearching, setIsSearching] = useState(false);
     const failureMessage = useRef("");
 
-    useEffect(() => { 
+    const hookReload = useCallback(() => {
+      if(!hasMorePages) sethasMorePages(true);
+      if(isSearching) setIsSearching(false);
       getNextPage(true);
-    }, [getNextPage]);
+    });
+    
+    useEffect(() => { 
+      hookReload();
+    }, [hookReload]);
 
     useEffect(() => {
       //listen for live updates if: 1.not searching 2.tweet is not displayed already
@@ -22,12 +28,6 @@ export const useTweets = () => {
       });
     return unsub;
     },[tweets, isSearching]);
-
-    const hookReload = () => {
-      if(!hasMorePages) sethasMorePages(true);
-      if(isSearching) setIsSearching(false);
-      getNextPage(true);
-    }
 
     const getNextPage = async (isFirstMount=false) => {
       setLoading(true);
