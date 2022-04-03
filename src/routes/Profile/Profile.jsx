@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import "./Profile.css"
 
 
-const Profile = (props) => {
-    const { signout, updatePublicData } = useContext(AuthContext);
+const Profile = () => {
+    const { updatePublicData } = useContext(AuthContext);
     const [displayName, setDisplayname] = useValue("");
     const [file, setFile] = useValue(undefined, "file");
     const navigate = useNavigate();

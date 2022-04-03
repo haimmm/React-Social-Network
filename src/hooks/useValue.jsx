@@ -10,6 +10,9 @@ export const useValue = (init="", type="text") => {
             case "file":
                 setValue(event.target.files[0]);
                 break;
+            default:
+                console.log("useValue: unrecognized value type!!")
+                break;
         }
     }
     const clear = () => {

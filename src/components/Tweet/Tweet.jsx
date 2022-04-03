@@ -8,7 +8,7 @@ const Tweet = (props) =>{
                 <Line justify={"space-between"}>
                     <Line>
                     <div className="profilePicture">
-                        <img src={props.photoURL}></img>
+                        <img src={props.photoURL} alt="profile picture"></img>
                     </div>
                     <div>{props.name}</div>
                     </Line>

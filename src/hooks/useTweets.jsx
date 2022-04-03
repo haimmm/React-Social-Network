@@ -7,10 +7,10 @@ export const useTweets = () => {
     const [hasMorePages, sethasMorePages] = useState(true);
     const [isSearching, setIsSearching] = useState(false);
     const failureMessage = useRef("");
-    console.log("searching:", isSearching);
+
     useEffect(() => { 
       hookReload();
-    }, []);
+    }, [hookReload]);
 
     useEffect(() => {
       //listen for live updates if: 1.not searching 2.tweet is not displayed already
@@ -21,7 +21,7 @@ export const useTweets = () => {
         }
       });
     return unsub;
-    },[tweets]);
+    },[tweets, isSearching]);
 
     const hookReload = () => {
       if(!hasMorePages) sethasMorePages(true);

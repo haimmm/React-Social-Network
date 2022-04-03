@@ -12,7 +12,7 @@ const firebaseConfig = {
     appId: "1:383168970519:web:5684c745aedd324edec152"
   };
 
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const db = getFirestore();
 const TWEETS_DB = collection(db, "tweets");

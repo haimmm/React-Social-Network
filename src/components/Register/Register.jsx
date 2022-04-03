@@ -12,8 +12,8 @@ const Register = () => {
     const [error, setError] = useState("");
 
     const handleSignup = () => {
-        signup(emailValue, passwordValue, nameValue).
-        catch((e) => {
+        signup(emailValue, passwordValue, nameValue)
+        .catch((e) => {
             setError(e.message);
         });
     }
