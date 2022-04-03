@@ -8,15 +8,9 @@ export const useTweets = () => {
     const [isSearching, setIsSearching] = useState(false);
     const failureMessage = useRef("");
 
-    const hookReload = useCallback(() => {
-      if(!hasMorePages) sethasMorePages(true);
-      if(isSearching) setIsSearching(false);
-      getNextPage(true);
-    },[hasMorePages, isSearching, getNextPage]);
-
     useEffect(() => { 
-      hookReload();
-    }, [hookReload]);
+      getNextPage(true);
+    }, [getNextPage]);
 
     useEffect(() => {
       //listen for live updates if: 1.not searching 2.tweet is not displayed already
@@ -29,7 +23,13 @@ export const useTweets = () => {
     return unsub;
     },[tweets, isSearching]);
 
-    const getNextPage = async (isFirstMount=false) => {
+    const hookReload = useCallback(() => {
+      if(!hasMorePages) sethasMorePages(true);
+      if(isSearching) setIsSearching(false);
+      getNextPage(true);
+    });
+
+    const getNextPage = useCallback(async (isFirstMount=false) => {
       setLoading(true);
       const rawTweets = await fb.getTweetsByCount(10, isFirstMount);
       if(rawTweets.length){
@@ -39,7 +39,7 @@ export const useTweets = () => {
       }else{
         sethasMorePages(false);
       }
-    }
+    });
 
     const search = async (propery, value) => {
       setIsSearching(true);
