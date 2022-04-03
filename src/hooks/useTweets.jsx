@@ -12,7 +12,7 @@ export const useTweets = () => {
       if(!hasMorePages) sethasMorePages(true);
       if(isSearching) setIsSearching(false);
       getNextPage(true);
-    },[]);
+    },[hasMorePages, isSearching, getNextPage]);
 
     useEffect(() => { 
       hookReload();
