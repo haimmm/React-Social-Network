@@ -12,7 +12,7 @@ In the other hand google saves you a lot of time and gives you running server wi
 
 
 I also learned more common react tools such as context API so I can easily access the autentication system from all components, \
-and also react router which gives multi page effet.
+and also react router which gives multi page feeling.
 
 
 I know this project still lacks a lot of things but I focus quantity (more projects) for now. \
