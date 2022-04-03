@@ -8,10 +8,6 @@ export const useTweets = () => {
     const [isSearching, setIsSearching] = useState(false);
     const failureMessage = useRef("");
 
-    useEffect(() => { 
-      getNextPage(true);
-    }, [getNextPage]);
-
     useEffect(() => {
       //listen for live updates if: 1.not searching 2.tweet is not displayed already
       const unsub = fb.onTweetsDbChange(async rawTweets => {
@@ -39,7 +35,11 @@ export const useTweets = () => {
       }else{
         sethasMorePages(false);
       }
-    },[]);
+    },[tweets]);
+
+    useEffect(() => { 
+      getNextPage(true);
+    }, [getNextPage]);
 
     const search = async (propery, value) => {
       setIsSearching(true);
