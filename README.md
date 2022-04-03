@@ -3,7 +3,7 @@
 
 This is my second react project and also instructed by my bootcamp class. \
 Currently it includes login, register, profile settings and main page with posts. \
-For backend I used firebase. \
+For backend I used firebase.
 
 **I learned a lot along this project** \
 First of all I didn't know how to use firebase and surfing through big api and find everything I need wasn't easy task.\
