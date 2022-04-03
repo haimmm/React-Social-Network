@@ -23,11 +23,11 @@ export const useTweets = () => {
     return unsub;
     },[tweets, isSearching]);
 
-    const hookReload = useCallback(() => {
+    const hookReload = () => {
       if(!hasMorePages) sethasMorePages(true);
       if(isSearching) setIsSearching(false);
       getNextPage(true);
-    });
+    }
 
     const getNextPage = useCallback(async (isFirstMount=false) => {
       setLoading(true);
@@ -39,7 +39,7 @@ export const useTweets = () => {
       }else{
         sethasMorePages(false);
       }
-    });
+    },[]);
 
     const search = async (propery, value) => {
       setIsSearching(true);
